@@ -1,0 +1,31 @@
+@startuml
+class DOOR{
+    - ID: String
+    - historial: String
+    + mostrarBuscador(): String
+    + mostrarLogo(): String
+}
+class pestaña{
+    -logo : String
+    -barraBusqueda :
+    +abrirPestaña()
+    +cerrarPestaña()
+}
+class usuario{
+    - nombre: String
+    + seleccionarBarra():
+}
+class barrabusqueda{
+    - mensaje : String
+    + verificarBusqueda(): bool
+    + mostrarResultados():
+}
+
+class raton{
+    -x : float
+    -y : float
+    +mostrarRaton():
+}
+pestaña --|> DOOR : Están dentro de
+
+@enduml
