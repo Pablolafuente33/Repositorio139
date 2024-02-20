@@ -2,30 +2,38 @@
 class DOOR{
     - ID: String
     - historial: String
+    + getID(): String
     + mostrarBuscador(): String
     + mostrarLogo(): String
+    + salir():
 }
 class pestaña{
-    -logo : String
-    -barraBusqueda :
-    +abrirPestaña()
-    +cerrarPestaña()
-}
-class usuario{
-    - nombre: String
-    + seleccionarBarra():
+    - logo : String
+    - barraBusqueda :
+    + abrirPestaña():
+    + cerrarPestaña():
+    + minimizar():
+    + cambiarTamaño():
 }
 class barrabusqueda{
     - mensaje : String
+    + getMensaje():
+    + setMensaje(mensaje: String): String
     + verificarBusqueda(): bool
     + mostrarResultados():
 }
+class resultados{
+    -resultadoBusqueda: String
 
+}
 class raton{
     -x : float
     -y : float
     +mostrarRaton():
+    +clicar(): bool
 }
-pestaña --|> DOOR : Están dentro de
-
+pestaña --> DOOR : Están dentro de
+barrabusqueda -- pestaña: contiene
+raton *-- DOOR
+resultados -- barrabusqueda : comparten mensaje
 @enduml
